@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View, Text, Button } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-function StackDemo({navigation}) {
+function HomeScreen({navigation}) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Home Screen</Text>
@@ -46,7 +46,7 @@ function PropsScreen({ navigation, route, myProp }) {
 
 const Stack = createStackNavigator();
 
-function App() {
+function StackDemo() {
   return (
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
