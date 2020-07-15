@@ -4,6 +4,7 @@ import StackDemo from './components/StackDemo';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {View, Text} from 'react-native';
 import GetDataDemo from './components/GetDataDemo';
+import UsersStack from './components/UsersStack';
 
 function SettingsScreen({navigation}) {
   return (
@@ -26,7 +27,7 @@ function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name={'Users'} component={GetDataDemo} />
+        <Tab.Screen name={'Users'} component={UsersStack} />
         <Tab.Screen name={'Settings'} component={StackDemo} />
       </Tab.Navigator>
     </NavigationContainer>

@@ -29,7 +29,6 @@ function OptionsScreen({navigation}) {
   );
 }
 
-
 function PropsScreen({ navigation, route, myProp }) {
   const {userName} = route.params
   return (
