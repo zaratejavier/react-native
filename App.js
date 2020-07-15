@@ -1,39 +1,39 @@
-import React from 'react';
-import { StyleSheet,View, Text, SafeAreaView } from 'react-native';
-import ScrollViewDemo from './components/ScrollViewDemo';
-import GetDataDemo from './components/GetDataDemo';
-import InputDemo from './components/InputDemo';
+import * as React from 'react';
+import { View, Text, Button } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-const App = () => {
+function HomeScreen({navigation}) {
   return (
-    // <View style={styles.container}>
-    //   <View style={styles.square}>
-    //     <Text>hello</Text>
-    //   </View>
-    // </View>
-
-    <SafeAreaView>
-      {/* <ScrollViewDemo/>   */}
-      <InputDemo/>
-      {/* <GetDataDemo/> */}
-    </SafeAreaView>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+      <Button title="Go to  Options"
+        onPress={() => navigation.navigate('Options')}
+      />
+    </View>
   );
-};
+}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  square: {
-    width: 100,
-    height: 100,
-    backgroundColor: 'teal',
-    borderColor: 'steelblue',
-    borderWidth: 2,
+function optionsScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>options Screen</Text>
+    </View>
+  );
+}
 
-  }
-});
+const Stack = createStackNavigator();
+
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Options" component={optionsScreen} />
+
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
 
 export default App;
